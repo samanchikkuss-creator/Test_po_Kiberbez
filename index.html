@@ -498,7 +498,7 @@
                 </div>
             </div>
 
-            <!-- НОВАЯ БАЗА - 517 вопросов -->
+
             <div class="db-section">
                 <div class="db-title new">🆕 НОВАЯ БАЗА (517 вопросов) - Кибербезопасность</div>
                 <div style="display: flex; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
@@ -518,9 +518,8 @@
                 <div class="menu-grid" id="new-base-stages"></div>
             </div>
 
-            <!-- СТАРАЯ БАЗА - 200 вопросов -->
             <div class="db-section">
-                <div class="db-title old">📀 СТАРАЯ БАЗА (200 вопросов) - Общие тесты</div>
+                <div class="db-title old">📀 СТАРАЯ БАЗА (234 вопросов) - Общие тесты</div>
                 <div style="display: flex; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
                     <button class="btn btn-warning" onclick="startOldBase()">
                         <i class="fas fa-play"></i> Начать тест (Старая база)
@@ -538,9 +537,9 @@
                 <div class="menu-grid" id="old-base-stages"></div>
             </div>
 
-            <!-- ВСЕ ВОПРОСЫ -->
+        
             <div class="db-section">
-                <div class="db-title">📚 ВСЕ ВОПРОСЫ (717 вопросов) - Новая + Старая</div>
+                <div class="db-title">📚 ВСЕ ВОПРОСЫ (751 вопросов) - Новая + Старая</div>
                 <div style="display: flex; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
                     <button class="btn btn-success" onclick="startAllBase()">
                         <i class="fas fa-play"></i> Начать тест (Все вопросы)
@@ -643,7 +642,6 @@
     </div>
 
     <script>
-        // ==================== НОВАЯ БАЗА (517 вопросов - Кибербезопасность) ====================
         const newQuestions = [
             ["Что такое кибербезопасность?", "Область, обеспечивающая правильное выполнение действий в условиях злоумышленников", "Прикладная наука, изучающая только защиту от компьютерных вирусов", "Технология защиты сетевых кабелей и технического обслуживания", "Система, предназначенная только для управления и хранения паролей"],
     ["Каковы три основных свойства информационной безопасности?", "Конфиденциальность, целостность, доступность", "Скорость, надёжность, экономичность", "Шифрование, пароль, межсетевой экран", "Вирус, троян, червь"],
@@ -1402,7 +1400,6 @@
 ];
 
 
-        // ==================== ВСЕ ВОПРОСЫ ====================
         const allQuestionsRaw = [...newQuestions, ...oldQuestions];
 
         const QUESTIONS_PER_STAGE = 30;
@@ -1415,19 +1412,17 @@
         let timerInterval;
         let currentStageName = '';
 
-        // Функции для новой базы
+
         function startNewBase() { startTest([...newQuestions], 'НОВАЯ БАЗА (все вопросы)'); }
         function startNewBaseRandom30() { startRandomN(newQuestions, 30, 'НОВАЯ БАЗА (случайные 30)'); }
         function startNewBaseRandom50() { startRandomN(newQuestions, 50, 'НОВАЯ БАЗА (случайные 50)'); }
         function startNewBaseRandom100() { startRandomN(newQuestions, 100, 'НОВАЯ БАЗА (случайные 100)'); }
 
-        // Функции для старой базы
         function startOldBase() { startTest([...oldQuestions], 'СТАРАЯ БАЗА (все вопросы)'); }
         function startOldBaseRandom30() { startRandomN(oldQuestions, 30, 'СТАРАЯ БАЗА (случайные 30)'); }
         function startOldBaseRandom50() { startRandomN(oldQuestions, 50, 'СТАРАЯ БАЗА (случайные 50)'); }
         function startOldBaseRandom100() { startRandomN(oldQuestions, 100, 'СТАРАЯ БАЗА (случайные 100)'); }
 
-        // Функции для всех вопросов
         function startAllBase() { startTest([...allQuestionsRaw], 'ВСЕ ВОПРОСЫ (Новая + Старая)'); }
         function startAllBaseRandom30() { startRandomN(allQuestionsRaw, 30, 'ВСЕ ВОПРОСЫ (случайные 30)'); }
         function startAllBaseRandom50() { startRandomN(allQuestionsRaw, 50, 'ВСЕ ВОПРОСЫ (случайные 50)'); }
